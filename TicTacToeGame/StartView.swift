@@ -23,6 +23,44 @@ struct StartView: View {
                 Text("Play with your friends via the internet!").tag(GameType.peer)
             }
             .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(lineWidth: 2)
+            )
+            Text(gameType.description)
+                .padding()
+            VStack {
+                switch gameType {
+                case .single:
+                    VStack {
+                        TextField("Your Name", text: $yourName)
+                        TextField("Opponents Name", text: $opponentName)
+                    }
+                case .bot:
+                        TextField("Your Name", text: $yourName)
+                case .peer:
+                    EmptyView()
+                case .undetermined:
+                    EmptyView()
+                }
+            }
+            .padding()
+            .textFieldStyle(.roundedBorder)
+            .focused($focus)
+            .frame(width: 350)
+            if gameType != .peer {
+                Button("Start the game!") {
+                    focus = false
+                }
+                .buttonStyle(.borderedProminent)
+                .disabled(
+                    gameType == .undetermined ||
+                    gameType == .bot && yourName.isEmpty ||
+                    gameType == .single &&
+                    (yourName.isEmpty || opponentName.isEmpty)
+                )
+                Image("LaunchScreen")
+            }
+            Spacer()
         }
         .padding()
     }
