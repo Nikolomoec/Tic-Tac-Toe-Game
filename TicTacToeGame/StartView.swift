@@ -13,6 +13,7 @@ struct StartView: View {
     @State private var yourName = ""
     @State private var opponentName = ""
     @FocusState private var focus: Bool
+    @State private var startGame = false
     
     var body: some View {
         VStack {
@@ -50,6 +51,7 @@ struct StartView: View {
             if gameType != .peer {
                 Button("Start the game!") {
                     focus = false
+                    startGame.toggle()
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(
@@ -63,6 +65,11 @@ struct StartView: View {
             Spacer()
         }
         .padding()
+        .navigationTitle("Tic Tac Toe Game")
+        .fullScreenCover(isPresented: $startGame){
+            GameView()
+        }
+        .isNavStack()
     }
 }
 
