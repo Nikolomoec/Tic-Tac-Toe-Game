@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct AppEntry: App {
+    @StateObject var game = GameServise()
     var body: some Scene {
         WindowGroup {
             StartView()
+                .environmentObject(game)
         }
     }
 }

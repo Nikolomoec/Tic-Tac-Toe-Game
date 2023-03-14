@@ -15,6 +15,9 @@
 		5A1F6FB629C0EAC5005089F8 /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FB529C0EAC5005089F8 /* GameModels.swift */; };
 		5A1F6FB929C0F469005089F8 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FB829C0F469005089F8 /* ViewModifiers.swift */; };
 		5A1F6FBC29C0F62F005089F8 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FBB29C0F62F005089F8 /* GameView.swift */; };
+		5A1F6FBE29C0FD2D005089F8 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FBD29C0FD2D005089F8 /* GameService.swift */; };
+		5A1F6FC029C10510005089F8 /* GameSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FBF29C10510005089F8 /* GameSquare.swift */; };
+		5A1F6FC229C106ED005089F8 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FC129C106ED005089F8 /* SquareView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		5A1F6FB529C0EAC5005089F8 /* GameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
 		5A1F6FB829C0F469005089F8 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		5A1F6FBB29C0F62F005089F8 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		5A1F6FBD29C0FD2D005089F8 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		5A1F6FBF29C10510005089F8 /* GameSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSquare.swift; sourceTree = "<group>"; };
+		5A1F6FC129C106ED005089F8 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				5A1F6FBB29C0F62F005089F8 /* GameView.swift */,
+				5A1F6FBD29C0FD2D005089F8 /* GameService.swift */,
+				5A1F6FBF29C10510005089F8 /* GameSquare.swift */,
+				5A1F6FC129C106ED005089F8 /* SquareView.swift */,
 			);
 			path = "Game Screen";
 			sourceTree = "<group>";
@@ -176,9 +185,12 @@
 			files = (
 				5A1F6FBC29C0F62F005089F8 /* GameView.swift in Sources */,
 				5A1F6FA729C0B209005089F8 /* StartView.swift in Sources */,
+				5A1F6FC029C10510005089F8 /* GameSquare.swift in Sources */,
 				5A1F6FB629C0EAC5005089F8 /* GameModels.swift in Sources */,
+				5A1F6FBE29C0FD2D005089F8 /* GameService.swift in Sources */,
 				5A1F6FA529C0B209005089F8 /* AppEntry.swift in Sources */,
 				5A1F6FB929C0F469005089F8 /* ViewModifiers.swift in Sources */,
+				5A1F6FC229C106ED005089F8 /* SquareView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
