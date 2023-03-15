@@ -21,6 +21,7 @@
 		5A1F6FC429C1F1D7005089F8 /* YourNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FC329C1F1D7005089F8 /* YourNameView.swift */; };
 		5A1F6FC829C1FCFD005089F8 /* MPConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FC729C1FCFD005089F8 /* MPConnectionManager.swift */; };
 		5A1F6FCA29C23232005089F8 /* MPGameMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FC929C23232005089F8 /* MPGameMove.swift */; };
+		5A1F6FCC29C23835005089F8 /* MPpeersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FCB29C23835005089F8 /* MPpeersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		5A1F6FC529C1FBF2005089F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A1F6FC729C1FCFD005089F8 /* MPConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPConnectionManager.swift; sourceTree = "<group>"; };
 		5A1F6FC929C23232005089F8 /* MPGameMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPGameMove.swift; sourceTree = "<group>"; };
+		5A1F6FCB29C23835005089F8 /* MPpeersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPpeersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			children = (
 				5A1F6FC729C1FCFD005089F8 /* MPConnectionManager.swift */,
 				5A1F6FC929C23232005089F8 /* MPGameMove.swift */,
+				5A1F6FCB29C23835005089F8 /* MPpeersView.swift */,
 			);
 			path = Multipeer;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				5A1F6FC029C10510005089F8 /* GameSquare.swift in Sources */,
 				5A1F6FB629C0EAC5005089F8 /* GameModels.swift in Sources */,
 				5A1F6FBE29C0FD2D005089F8 /* GameService.swift in Sources */,
+				5A1F6FCC29C23835005089F8 /* MPpeersView.swift in Sources */,
 				5A1F6FC829C1FCFD005089F8 /* MPConnectionManager.swift in Sources */,
 				5A1F6FA529C0B209005089F8 /* AppEntry.swift in Sources */,
 				5A1F6FB929C0F469005089F8 /* ViewModifiers.swift in Sources */,
