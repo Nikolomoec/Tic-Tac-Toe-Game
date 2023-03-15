@@ -29,6 +29,40 @@ struct GameView: View {
                 .buttonStyle(PlayerButtonStyle(isCurrent: game.player2.isCurrent))
             }
             .disabled(game.gameStarted)
+            VStack {
+                HStack {
+                    ForEach(0...2, id: \.self) { index in
+                        SquareView(index: index)
+                    }
+                }
+                HStack {
+                    ForEach(3...5, id: \.self) { index in
+                        SquareView(index: index)
+                    }
+                }
+                HStack {
+                    ForEach(6...8, id: \.self) { index in
+                        SquareView(index: index)
+                    }
+                }
+            }
+            .disabled(game.boardDisable)
+            VStack {
+                if game.gameOver {
+                    Text("Game Over")
+                    if game.possibleMoves.isEmpty {
+                        Text("Nobody wins")
+                    } else {
+                        Text("\(game.currentPlayer.name) wins!")
+                    }
+                }
+                Button("New Game") {
+                    game.resetGame()
+                }
+                .buttonStyle(.borderedProminent)
+            }
+            .font(.largeTitle)
+            
             Spacer()
         }
         .toolbar {
@@ -40,6 +74,9 @@ struct GameView: View {
             }
         }
         .navigationTitle("Tic Tac Toe Game")
+        .onAppear {
+            game.resetGame()
+        }
         .isNavStack()
     }
 }

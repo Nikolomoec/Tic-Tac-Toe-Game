@@ -5,13 +5,13 @@
 //  Created by Nikita Kolomoec on 14.03.2023.
 //
 
-import Foundation
+import SwiftUI
 
 @MainActor
 class GameServise: ObservableObject {
     
     @Published var player1 = Player(gamePiece: .x, name: "Player 1")
-    @Published var player2 = Player(gamePiece: .x, name: "Player 2")
+    @Published var player2 = Player(gamePiece: .o, name: "Player 2")
     @Published var possibleMoves = Move.all
     @Published var gameOver = false
     @Published var gameBoard = GameSquare.reset
@@ -58,5 +58,43 @@ class GameServise: ObservableObject {
         possibleMoves = Move.all
         
         gameBoard = GameSquare.reset
+    }
+    
+    func updateMoves(index: Int) {
+        if player1.isCurrent {
+            player1.moves.append(index + 1)
+            gameBoard[index].player = player1
+        } else {
+            player2.moves.append(index + 1)
+            gameBoard[index].player = player2
+        }
+    }
+    func checkIfWinner() {
+        
+        if player1.isWinner || player2.isWinner {
+            gameOver = true
+        }
+        
+    }
+    func toogleCurrent() {
+        player1.isCurrent.toggle()
+        player2.isCurrent.toggle()
+    }
+    func makeMove(at index: Int) {
+        if gameBoard[index].player == nil {
+            withAnimation {
+                updateMoves(index: index)
+            }
+            checkIfWinner()
+            if !gameOver {
+                if let matchingIndex = possibleMoves.firstIndex(where: { $0 == (index + 1)}) {
+                    possibleMoves.remove(at: matchingIndex)
+                }
+                toogleCurrent()
+            }
+            if possibleMoves.isEmpty {
+                gameOver = true
+            }
+        }
     }
 }
