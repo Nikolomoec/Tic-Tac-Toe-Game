@@ -10,12 +10,17 @@ import SwiftUI
 struct StartView: View {
     
     @EnvironmentObject var game: GameServise
+    @AppStorage("yourName") var yourName = ""
     @State private var gameType: GameType = .undetermined
-    @State private var yourName = ""
     @State private var opponentName = ""
     @FocusState private var focus: Bool
     @State private var startGame = false
+    @State private var changeName = false
+    @State private var newName = ""
     
+    init(yourName: String) {
+        self.yourName = yourName
+    }
     var body: some View {
         VStack {
             Picker("Select Game", selection: $gameType) {
@@ -33,12 +38,9 @@ struct StartView: View {
             VStack {
                 switch gameType {
                 case .single:
-                    VStack {
-                        TextField("Your Name", text: $yourName)
-                        TextField("Opponents Name", text: $opponentName)
-                    }
+                    TextField("Opponents Name", text: $opponentName)
                 case .bot:
-                        TextField("Your Name", text: $yourName)
+                    EmptyView()
                 case .peer:
                     EmptyView()
                 case .undetermined:
@@ -58,11 +60,14 @@ struct StartView: View {
                 .buttonStyle(.borderedProminent)
                 .disabled(
                     gameType == .undetermined ||
-                    gameType == .bot && yourName.isEmpty ||
-                    gameType == .single &&
-                    (yourName.isEmpty || opponentName.isEmpty)
+                    gameType == .single && opponentName.isEmpty
                 )
                 Image("LaunchScreen")
+                Text("Your Name is \(yourName)")
+                Button("Change my name") {
+                    changeName.toggle()
+                }
+                .buttonStyle(.borderedProminent)
             }
             Spacer()
         }
@@ -71,13 +76,23 @@ struct StartView: View {
         .fullScreenCover(isPresented: $startGame){
             GameView()
         }
+        .alert("Change Name", isPresented: $changeName, actions: {
+            TextField("New Name", text: $newName)
+            Button("OK", role: .destructive) {
+                yourName = newName
+                exit(-1)
+            }
+            Button("Cancel", role: .cancel) {}
+        }, message: {
+            Text("Tapping on the OK Button will change your name and reload your app, to apply changes")
+        })
         .isNavStack()
     }
 }
 
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {
-        StartView()
+        StartView(yourName: "Iphone Name")
             .environmentObject(GameServise())
     }
 }

@@ -18,6 +18,7 @@
 		5A1F6FBE29C0FD2D005089F8 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FBD29C0FD2D005089F8 /* GameService.swift */; };
 		5A1F6FC029C10510005089F8 /* GameSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FBF29C10510005089F8 /* GameSquare.swift */; };
 		5A1F6FC229C106ED005089F8 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FC129C106ED005089F8 /* SquareView.swift */; };
+		5A1F6FC429C1F1D7005089F8 /* YourNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F6FC329C1F1D7005089F8 /* YourNameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		5A1F6FBD29C0FD2D005089F8 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		5A1F6FBF29C10510005089F8 /* GameSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSquare.swift; sourceTree = "<group>"; };
 		5A1F6FC129C106ED005089F8 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		5A1F6FC329C1F1D7005089F8 /* YourNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			children = (
 				5A1F6FA429C0B209005089F8 /* AppEntry.swift */,
 				5A1F6FA629C0B209005089F8 /* StartView.swift */,
+				5A1F6FC329C1F1D7005089F8 /* YourNameView.swift */,
 				5A1F6FBA29C0F619005089F8 /* Game Screen */,
 				5A1F6FB429C0EAB8005089F8 /* Models */,
 				5A1F6FB729C0F448005089F8 /* Utilities */,
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1F6FC429C1F1D7005089F8 /* YourNameView.swift in Sources */,
 				5A1F6FBC29C0F62F005089F8 /* GameView.swift in Sources */,
 				5A1F6FA729C0B209005089F8 /* StartView.swift in Sources */,
 				5A1F6FC029C10510005089F8 /* GameSquare.swift in Sources */,
